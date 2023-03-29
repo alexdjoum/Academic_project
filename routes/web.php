@@ -16,9 +16,11 @@ use App\Http\Controllers\EventsController;
 */
 
 Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
+Route::get('/myevent', [EventsController::class, 'index']);
 Route::get('events/{id}', [EventsController::class, 'show']);
 Route::get(
     'events/category/{category}/{subcategory}',
     [EventsController::class, 'category']
 );
+Route::get('/testdatabase', [WelcomeController::class, 'testdatabase']);
 /*Route::get('/', 'WelcomeController@index');*/
