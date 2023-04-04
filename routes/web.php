@@ -1,7 +1,8 @@
 <?php
-
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventsController;
 
 /*
@@ -15,8 +16,8 @@ use App\Http\Controllers\EventsController;
 |
 */
 
-Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
-Route::get('/myevent', [EventsController::class, 'index']);
+
+ 
 Route::get('events/{id}', [EventsController::class, 'show']);
 Route::get(
     'events/category/{category}/{subcategory}',
@@ -24,3 +25,4 @@ Route::get(
 );
 Route::get('/testdatabase', [WelcomeController::class, 'testdatabase']);
 /*Route::get('/', 'WelcomeController@index');*/
+ 
