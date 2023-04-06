@@ -11,8 +11,8 @@ class UserController extends Controller
         $utilisateurDonnee = $request -> validate([
             "name" => ["required","string","min:2","max:255"],
             "email" => ["required","email","unique:users,email"],
-            "password" => ["required","string","min:8","max:30","confirmed"]
-            
+            "password" => ["required","string","min:8","max:30","confirmed"],
+            "isadmin" =>["required","boolean"]
         ]);
 
         
@@ -20,7 +20,8 @@ class UserController extends Controller
         $utilisateurs = User::create([
                 "name" => $utilisateurDonnee["name"],
                 "email" => $utilisateurDonnee["email"],
-                "password" => bcrypt($utilisateurDonnee["password"])
+                "password" => bcrypt($utilisateurDonnee["password"]),
+                "isadmin" =>utilisateurDonnee(["isadmin"])
 
         ]);
 
