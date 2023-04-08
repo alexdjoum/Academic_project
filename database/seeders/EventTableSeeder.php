@@ -30,15 +30,17 @@ class EventTableSeeder extends Seeder
         //'description' => "Weather monitoring with the Pi"
         //]);
 
-        $events = [
-            [
-                'name'           => 'Laravel and Coffee',
-                'city'          => 'Dublin',
+        //$events = [
+            //[
+              //  'name'           => 'Laravel and Coffee',
+            //    'city'          => 'Dublin',
                 //'password'       => bcrypt('password'),
                 //'remember_token' => null,
-            ],
-        ];
+          //  ],
+        //];
 
-        Event::insert($events);
+        //Event::insert($events);
+
+        $this->call([EventsTableSeeder::class]);
     }
 }

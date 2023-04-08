@@ -18,16 +18,16 @@ return new class extends Migration
             $table->text("description")->nullable(false);
             $table ->string("imagepath")->nullable(false);
             $table ->unsignedBigInteger("categorie_id")->nullable(false);
-            //$table->foreign("categorie_id")->references("id")->on("categories")->onDelete("cascade");
+            $table->foreign('categorie_id')->references('id')->on('categories')->onDelete('cascade');
              
-            
+            //$table->foreign('department_id')->references('id')->on('departments');
             //$table ->boolval("confadmin");
             $table->timestamps();
         });
 
-         Schema::create('produits', function ($table) {
-             $table->foreign('categorie_id')->references('id')->on('categories');   
-         });
+        //  Schema::create('produits', function ($table) {
+            //  $table->foreign('categorie_id')->references('id')->on('categories');   
+        //  });
     }
 
     /**

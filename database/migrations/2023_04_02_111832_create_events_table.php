@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('namecity');
             $table->string('city');
             
-            $table->timestamps();
+            //$table->timestamps();
         });
     }
 
