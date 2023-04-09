@@ -8,11 +8,14 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     public function inscription(Request $request){
+        //echo "bonjour";
+        //return response("bonjour", 201);
+
         $utilisateurDonnee = $request -> validate([
-            "name" => ["required","string","min:2","max:255"],
-            "email" => ["required","email","unique:users,email"],
-            "password" => ["required","string","min:8","max:30","confirmed"],
-            "isadmin" =>["required","boolean"]
+            'name' => 'required|string|min:2|max:255',
+            'email' => 'required',
+            'password' => 'required|string|min:4|max:30'
+            //"isadmin" =>["required","boolean"]
         ]);
 
         
@@ -21,7 +24,11 @@ class UserController extends Controller
                 "name" => $utilisateurDonnee["name"],
                 "email" => $utilisateurDonnee["email"],
                 "password" => bcrypt($utilisateurDonnee["password"]),
-                "isadmin" =>utilisateurDonnee(["isadmin"])
+                
+                //"name" => $utilisateurDonnee["name"],
+                //"email" => $utilisateurDonnee["email"],
+                //"password" => bcrypt($utilisateurDonnee["password"]),
+               // "isadmin" =>utilisateurDonnee(["isadmin"])
 
         ]);
 
