@@ -13,7 +13,7 @@ class UserController extends Controller
 
         $utilisateurDonnee = $request -> validate([
             'name' => 'required|string|min:2|max:255',
-            'email' => 'required',
+            'email' => 'required|unique:users',
             'password' => 'required|string|min:4|max:30'
             //"isadmin" =>["required","boolean"]
         ]);
