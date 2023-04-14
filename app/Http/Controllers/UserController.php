@@ -9,7 +9,7 @@ class UserController extends Controller
 {
     public function inscription(Request $request){
         //echo "bonjour";
-        //return response("bonjour", 201);
+        
 
         $utilisateurDonnee = $request -> validate([
             'name' => 'required|string|min:2|max:255',
@@ -18,7 +18,9 @@ class UserController extends Controller
             //"isadmin" =>["required","boolean"]
         ]);
 
-        
+       // $user = User::where('email', $request->email)->first();
+
+        //return response()->json("Bonjour");
 
         $utilisateurs = User::create([
                 "name" => $utilisateurDonnee["name"],
@@ -32,7 +34,10 @@ class UserController extends Controller
 
         ]);
 
-        return response($utilisateurs, 201);
+        return response()->json([
+            'status' => 200,
+            'message' => 'User created.',
+            'data' => $utilisateurs,201]);
     }
 
     public function connexion(Request $request){
