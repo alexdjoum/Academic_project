@@ -27,5 +27,5 @@
     @endforeach
 </ul>
 
-<img src="/img/tennis1.jpeg">
+<img src="img/tennis1.jpeg">
 <img src="{{ asset('img/tennis1.jpeg') }}">

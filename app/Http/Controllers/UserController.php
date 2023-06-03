@@ -15,22 +15,15 @@ class UserController extends Controller
             'name' => 'required|string|min:2|max:255',
             'email' => 'required|unique:users',
             'password' => 'required|string|min:4|max:30'
-            //"isadmin" =>["required","boolean"]
         ]);
 
-       // $user = User::where('email', $request->email)->first();
 
-        //return response()->json("Bonjour");
 
         $utilisateurs = User::create([
                 "name" => $utilisateurDonnee["name"],
                 "email" => $utilisateurDonnee["email"],
                 "password" => bcrypt($utilisateurDonnee["password"]),
                 
-                //"name" => $utilisateurDonnee["name"],
-                //"email" => $utilisateurDonnee["email"],
-                //"password" => bcrypt($utilisateurDonnee["password"]),
-               // "isadmin" =>utilisateurDonnee(["isadmin"])
 
         ]);
 

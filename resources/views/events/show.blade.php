@@ -8,6 +8,6 @@
 </head>
 <body>
     <p>{{ $name }} We're looking at event ID #{{ $id }}.</p>
-    <img src="/img/tennis1.jpg">
+    <img src="/img/tennis1.jpeg">
 </body>
 </html>
