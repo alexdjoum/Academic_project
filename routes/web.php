@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventsController;
+use App\Http\Controllers\MyTraining;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,5 +25,6 @@ Route::get(
     [EventsController::class, 'category']
 );
 Route::get('/testdatabase', [WelcomeController::class, 'testdatabase']);
+Route::get('training', [MyTraining::class, 'show']);
 /*Route::get('/', 'WelcomeController@index');*/
  
